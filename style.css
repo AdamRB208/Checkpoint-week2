@@ -1,8 +1,13 @@
 header {
-  background-color: rgb(237, 241, 23);
+  background-color: rgb(216, 226, 124);
 
 }
 
 body {
   background-color: rgb(101, 100, 104);
+}
+
+.moon-img {
+  max-height: 400px;
+  max-width: 400px;
 }

@@ -15,21 +15,51 @@
 </head>
 
 <body>
-  <header></header>
-  <div class="container">
-    <div class="row">
-      <div class="col-12"></div>
-      <h1>Moon Miner!🌔</h1>
-    </div>
-  </div>
-  <main>
+  <header>
     <div class="container">
       <div class="row">
-        <div class="col-12"></div>
-        <h2>stuff</h2>
+        <div class="col-12 mb-3"></div>
+        <h1>🌖Moon Miner🌔</h1>
       </div>
     </div>
+  </header>
+  <main>
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="text-center">
+            <img onclick="mineMoon()" class="moon-img w-30 m-5"
+              src="https://images.unsplash.com/photo-1481819613568-3701cbc70156?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vb258ZW58MHx8MHx8fDI%3D"
+              alt="picture of moon">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-3 mdi mdi-clock-time-four-outline">click counter : 0</div>
+        <div id="oreObtained" class="col-3 mdi mdi-image-filter-hdr-outline">ore obtained: 0</div>
+        <div class="col-3 mdi mdi-clock-time-four-outline">timer</div>
+      </div>
+    </section>
   </main>
+  <footer>
+    <section class="container-fluid">
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Click Upgrades</h3>
+          <p class="mdi mdi-image-filter-hdr-outline">Pickaxe</p>
+        </div>
+        <p class="mdi mdi-mace">Drill</p>
+        <div class="col-lg-6">
+          <h3>Automatic Upgrades</h3>
+          <p class="mdi mdi-rocket-outline">Astronaut</p>
+          <P class="mdi mdi-car-outline">Rover</P>
+        </div>
+      </div>
+    </section>
+  </footer>
 
   <script src="app.js"></script>
 </body>
