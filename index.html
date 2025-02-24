@@ -49,13 +49,23 @@
       <div class="row">
         <div class="col-lg-6">
           <h3>Click Upgrades</h3>
-          <p class="mdi mdi-image-filter-hdr-outline">Pickaxe</p>
-        </div>
-        <p class="mdi mdi-mace">Drill</p>
-        <div class="col-lg-6">
+          <button onclick="buyPickaxe()" class="mdi mdi-image-filter-hdr-outline">Pickaxe</button>
+          <button onclick="buyDrill()" class="mdi mdi-mace">Drill</button>
           <h3>Automatic Upgrades</h3>
-          <p class="mdi mdi-rocket-outline">Astronaut</p>
-          <P class="mdi mdi-car-outline">Rover</P>
+          <button onclick="buyAstronaut()" class="mdi mdi-rocket-outline">Astronaut</button>
+          <button onclick="buyRover()" class="mdi mdi-car-outline">Rover</button>
+        </div>
+        <div class="col-lg-6">
+          <h3>Click Purchases</h3>
+          <div class="clickUpgradePurchase">Pickaxe =</div>
+          <span></span>
+          <div>Drill =</div>
+          <span></span>
+          <h3>Automatic Purchases</h3>
+          <div>Astronaut =</div>
+          <span></span>
+          <div>Rover =</div>
+          <span></span>
         </div>
       </div>
     </section>
