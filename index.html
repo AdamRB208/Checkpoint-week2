@@ -37,7 +37,7 @@
     </section>
     <section class="container-fluid">
       <div class="row justify-content-center">
-        <div class="col-3 mdi mdi-clock-time-four-outline">click counter : 0</div>
+        <div class="col-3 mdi mdi-clock-time-four-outline" id="clickCounter">click counter : 0</div>
         <div id="oreObtained" class="col-3 mdi mdi-image-filter-hdr-outline">ore obtained: 0</div>
         <div class="col-3 mdi mdi-clock-time-four-outline">timer</div>
       </div>
@@ -53,11 +53,11 @@
           <button onclick="buyPickaxe()" class="mdi mdi-image-filter-hdr-outline">
             Pickaxe <span id="pickaxePrice">10</span>
           </button>
-          <button onclick="buyDrill()" class="mdi mdi-mace">Drill <span id="drillPrice">20</span></button>
+          <button onclick="buyDrill()" class="mdi mdi-mace">Drill <span id="drillPrice">15</span></button>
           <h3>Automatic Upgrades</h3>
           <button onclick="buyAstronaut()" class="mdi mdi-rocket-outline">Astronaut <span
-              id="astronautPrice">15</span></button>
-          <button onclick="buyRover()" class="mdi mdi-car-outline">Rover <span id="roverPrice">30</span></button>
+              id="astronautPrice">20</span></button>
+          <button onclick="buyRover()" class="mdi mdi-car-outline">Rover <span id="roverPrice">25</span></button>
         </div>
         <div class="col-lg-6">
           <h3>Click Purchases</h3>

@@ -12,7 +12,7 @@ let clickUpgrades = [
 
   {
     name: 'drill',
-    price: 20,
+    price: 15,
     quantity: 0,
     mineAbility: 5,
   }
@@ -21,14 +21,14 @@ let clickUpgrades = [
 let automaticUpgrades = [
   {
     name: 'astronaut',
-    price: 15,
+    price: 20,
     quantity: 0,
     mineAbility: 20,
   },
 
   {
     name: 'rover',
-    price: 30,
+    price: 25,
     quantity: 0,
     mineAbility: 30,
   }
@@ -48,6 +48,7 @@ function mineMoon() {
   ore += 1 + pickaxeAmount + drillAmount
 
   drawOre()
+  // drawClickCounter()
   console.log(ore)
 }
 
@@ -131,6 +132,7 @@ function drawOre() {
   const oreElem = document.getElementById('oreObtained')
   oreElem.innerText = `ore obtained: ${ore}`
 
+  // drawClickCounter()
 }
 
 function drawPickaxePrice() {
@@ -173,12 +175,23 @@ function drawAutomaticPurchases() {
   roverPurchasesElem.innerText = `Astronaut Purchases: ${automaticUpgrades[1].quantity}`;
 }
 
+// function drawClickCounter() {
+//   // const clickCounter = clickUpgrades[0].mineAbility + clickUpgrades[1].mineAbility + automaticUpgrades[0].mineAbility + automaticUpgrades[1].mineAbility;
+
+//   const clickCounterElem = document.getElementById('clickCounter');
+
+//   clickCounterElem.innerText = `click Counter: ${clickUpgrades[0].mineAbility + clickUpgrades[1].mineAbility + automaticUpgrades[0].mineAbility + automaticUpgrades[1].mineAbility + clickUpgrades[0].quantity + clickUpgrades[1].quantity + automaticUpgrades[0].quantity + automaticUpgrades[1].quantity}`;
+
+
+//   drawClickCounter()
+// }
+
 
 // TODO write functions to draw all stats for upgrades (qty and price), call these draw functions whenever the relevant upgrade is purchased
 // TODO write functions that display how much I receive per click/per interval. You already have the code that calculates that in your mine function, recalculate it in a draw function and display it on the page
 
 
-setInterval(updateAutomaticMining, 5000)
+setInterval(updateAutomaticMining, 3000)
 
 function updateAutomaticMining() {
   const astronaut = automaticUpgrades[0];
