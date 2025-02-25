@@ -48,12 +48,16 @@
 
       <div class="row">
         <div class="col-lg-6">
+          <!-- TODO show the price of each upgrade -->
           <h3>Click Upgrades</h3>
-          <button onclick="buyPickaxe()" class="mdi mdi-image-filter-hdr-outline">Pickaxe</button>
-          <button onclick="buyDrill()" class="mdi mdi-mace">Drill</button>
+          <button onclick="buyPickaxe()" class="mdi mdi-image-filter-hdr-outline">
+            Pickaxe <span id="pickaxePrice">10</span>
+          </button>
+          <button onclick="buyDrill()" class="mdi mdi-mace">Drill <span class="drillPrice">20</span></button>
           <h3>Automatic Upgrades</h3>
-          <button onclick="buyAstronaut()" class="mdi mdi-rocket-outline">Astronaut</button>
-          <button onclick="buyRover()" class="mdi mdi-car-outline">Rover</button>
+          <button onclick="buyAstronaut()" class="mdi mdi-rocket-outline">Astronaut <span
+              class="AstronautPrice">15</span></button>
+          <button onclick="buyRover()" class="mdi mdi-car-outline">Rover <span class="roverPrice">25</span></button>
         </div>
         <div class="col-lg-6">
           <h3>Click Purchases</h3>
