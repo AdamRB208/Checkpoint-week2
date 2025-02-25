@@ -53,23 +53,21 @@
           <button onclick="buyPickaxe()" class="mdi mdi-image-filter-hdr-outline">
             Pickaxe <span id="pickaxePrice">10</span>
           </button>
-          <button onclick="buyDrill()" class="mdi mdi-mace">Drill <span class="drillPrice">20</span></button>
+          <button onclick="buyDrill()" class="mdi mdi-mace">Drill <span id="drillPrice">20</span></button>
           <h3>Automatic Upgrades</h3>
           <button onclick="buyAstronaut()" class="mdi mdi-rocket-outline">Astronaut <span
-              class="AstronautPrice">15</span></button>
-          <button onclick="buyRover()" class="mdi mdi-car-outline">Rover <span class="roverPrice">25</span></button>
+              id="astronautPrice">15</span></button>
+          <button onclick="buyRover()" class="mdi mdi-car-outline">Rover <span id="roverPrice">30</span></button>
         </div>
         <div class="col-lg-6">
           <h3>Click Purchases</h3>
-          <div class="clickUpgradePurchase">Pickaxe =</div>
-          <span></span>
-          <div>Drill =</div>
-          <span></span>
+          <span id="pickaxePurchases">Pickaxe Purchases: </span>
+          <div></div>
+          <span id="drillPurchases">Drill Purchases: </span>
           <h3>Automatic Purchases</h3>
-          <div>Astronaut =</div>
-          <span></span>
-          <div>Rover =</div>
-          <span></span>
+          <span id="astronautPurchases">Astronaut Purchases: =</span>
+          <div></div>
+          <span id="roverPurchases">Rover purchases: =</span>
         </div>
       </div>
     </section>

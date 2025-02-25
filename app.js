@@ -28,7 +28,7 @@ let automaticUpgrades = [
 
   {
     name: 'rover',
-    price: 25,
+    price: 30,
     quantity: 0,
     mineAbility: 30,
   }
@@ -51,31 +51,6 @@ function mineMoon() {
   console.log(ore)
 }
 
-// NOTE don't apply auto upgrades on our mine function (onclick)
-// NOTE write a new function that applies your autoUpgrades to the ore
-
-//needs work
-// function automaticMining() {
-//   const astronaut = automaticUpgrades[0]
-//   const rover = automaticUpgrades[1]
-//   const astronautAmount = astronaut.MineAbility * astronaut.quantity
-//   const roverAmount = rover.MineAbility * rover.quantity
-// setInterval(automaticUpgrades.mineAbility, 3000)
-// automaticUpgrades.forEach(automaticUpgrade, ++ ore)
-// }
-
-function bankResources() {
-  const astronaut = automaticUpgrades[0]
-  const rover = automaticUpgrades[1]
-  const astronautAmount = astronaut.mineAbility * astronaut.quantity
-  const roverAmount = rover.mineAbility * rover.quantity
-  ore += astronautAmount + roverAmount
-
-  drawOre()
-  console.log(ore)
-}
-
-
 // use as reference to draw other upgrade, purchases and click/timer amounts.
 function buyPickaxe() {
   const pickaxe = clickUpgrades[0]
@@ -88,8 +63,9 @@ function buyPickaxe() {
     drawOre()
   }
 
-  drawOre()
+  drawClickPurchases()
   drawPickaxePrice()
+  drawOre()
   console.log(ore)
 
 }
@@ -103,12 +79,10 @@ function buyDrill() {
       drill.price += 2
     }
     drawOre()
-    if (ore <= drill.price) {
-      return
-    }
-
   }
 
+  drawClickPurchases()
+  drawDrillPrice()
   drawOre()
   console.log(ore)
 }
@@ -122,11 +96,10 @@ function buyAstronaut() {
       astronaut.price += 2
     }
     drawOre()
-    if (ore <= astronaut.price) {
-      return
-    }
   }
 
+  drawAutomaticPurchases()
+  drawAstronautPrice()
   drawOre()
   console.log(ore)
 }
@@ -140,13 +113,10 @@ function buyRover() {
       rover.price += 2
     }
     drawOre()
-    if (ore <= rover.price) {
-      return
-    }
   }
 
-
-
+  drawAutomaticPurchases()
+  drawRoverPrice()
   drawOre()
   console.log(ore)
 }
@@ -169,20 +139,61 @@ function drawPickaxePrice() {
   pickaxeElem.innerText = `pickaxe ${pickaxe.price}`
 }
 
+function drawDrillPrice() {
+  const drill = clickUpgrades[1]
+  const drillElem = document.getElementById('drillPrice')
+  drillElem.innerText = `drill ${drill.price}`
+}
+
+function drawAstronautPrice() {
+  const astronaut = automaticUpgrades[0]
+  const astronautElem = document.getElementById('astronautPrice')
+  astronautElem.innerText = `astronaut ${astronaut.price}`
+}
+
+function drawRoverPrice() {
+  const rover = automaticUpgrades[1]
+  const roverElem = document.getElementById('roverPrice')
+  roverElem.innerText = `rover ${rover.price}`
+}
+
+function drawClickPurchases() {
+  const pickaxePurchasesElem = document.getElementById('pickaxePurchases');
+  const drillPurchasesElem = document.getElementById('drillPurchases');
+
+  pickaxePurchasesElem.innerText = `Pickaxe Purchases: ${clickUpgrades[0].quantity}`;
+  drillPurchasesElem.innerText = `Drill Purchases: ${clickUpgrades[1].quantity}`;
+}
+
+function drawAutomaticPurchases() {
+  const astronautPurchasesElem = document.getElementById('astronautPurchases');
+  const roverPurchasesElem = document.getElementById('roverPurchases');
+
+  astronautPurchasesElem.innerText = `Astronaut Purchases: ${automaticUpgrades[0].quantity}`;
+  roverPurchasesElem.innerText = `Astronaut Purchases: ${automaticUpgrades[1].quantity}`;
+}
+
 
 // TODO write functions to draw all stats for upgrades (qty and price), call these draw functions whenever the relevant upgrade is purchased
 // TODO write functions that display how much I receive per click/per interval. You already have the code that calculates that in your mine function, recalculate it in a draw function and display it on the page
 
-// function drawClickPurchases() {
-//   const clickPurchaseElem = document.getElementById('clickUpgradePurchase')
-//   clickPurchaseElem.innerText = `Pickaxe = ${clickUpgrades}`
-// }
 
-// TODO write a function (collectAuto) that will add up all of your autoUpgrades (qty * mineAmount) and apply it to your resource (ore)
-// TODO call your collectAuto every 3 seconds, start that interval at the bottom of the js sheets (zoo_keeper is a good reference)
+setInterval(updateAutomaticMining, 5000)
 
+function updateAutomaticMining() {
+  const astronaut = automaticUpgrades[0];
+  const rover = automaticUpgrades[1];
 
+  const astronautAmount = astronaut.mineAbility * astronaut.quantity;
+  const roverAmount = rover.mineAbility * rover.quantity;
 
+  ore += astronautAmount + roverAmount
+
+  drawOre()
+
+}
+
+// automaticUpgrades.forEach(automaticUpgrade, ++ore)
 //!SECTION
 
 drawOre()
